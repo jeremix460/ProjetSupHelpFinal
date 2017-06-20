@@ -104,5 +104,21 @@ namespace ProjetSupHelp.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Details(int Id)
+        {
+            using (SupHelpDbContext db = new SupHelpDbContext())
+            {
+                var demand = db.Demands.Include(sp => sp.DemandedCourses).Include(c => c.Campus).Include(av => av.Availabilities).Where(prop => prop.ID == Id).FirstOrDefault();
+
+                if (ModelState.IsValid)
+                {
+                    return View(demand);
+                }
+            }
+
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

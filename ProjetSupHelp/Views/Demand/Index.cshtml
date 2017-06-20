@@ -11,9 +11,7 @@
         <th>
             @Html.DisplayNameFor(model => model.BoosterID)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.DemandedCourses)
         </th>
@@ -34,9 +32,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.BoosterID)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
+           
             <td>
                 @foreach (var course in item.DemandedCourses)
                 {

@@ -1,0 +1,82 @@
+﻿@model ProjetSupHelp.Models.SupportProposition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Proposition de soutien :</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BoosterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoosterID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraCourses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraCourses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupportedCourses)
+        </dt>
+
+        <dd>
+            @foreach (var course in Model.SupportedCourses)
+            {
+                @Html.DisplayFor(modelCourse => course.Label)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Availabilities)
+        </dt>
+
+        <dd>
+            @foreach (var av in Model.Availabilities)
+            {
+                @Html.DisplayFor(modelAv => av.Day)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Campus)
+        </dt>
+
+        <dd>
+            @foreach (var campus in Model.Campus)
+            {
+                @Html.DisplayFor(modelAv => campus.City)
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

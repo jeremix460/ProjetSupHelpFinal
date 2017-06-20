@@ -272,6 +272,8 @@
     <Content Include="Views\Shared\_PartialComponents.cshtml" />
     <Content Include="Views\Demand\Index.cshtml" />
     <Content Include="Views\Demand\Demand.cshtml" />
+    <Content Include="Views\Proposition\Details.cshtml" />
+    <Content Include="Views\Demand\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
