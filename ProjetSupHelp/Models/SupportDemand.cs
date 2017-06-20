@@ -24,7 +24,7 @@ namespace ProjetSupHelp.Models
 
         [Required]
         [DisplayName("Modules")]
-        public Course DemandedCourses { get; set; }
+        public ICollection<Course> DemandedCourses { get; set; }
 
         [Required]
         [DisplayName("Campus")]

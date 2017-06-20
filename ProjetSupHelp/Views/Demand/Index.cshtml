@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjetSupHelp.Models.SupportDemand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Demandes en cours</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BoosterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemandedCourses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Campus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Availabilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoosterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @foreach (var course in item.DemandedCourses)
+                {
+                    @Html.DisplayFor(modelCourse => course.Label)
+                }
+            </td>
+            <td>
+                @foreach (var campus in item.Campus)
+                {
+                    @Html.DisplayFor(modelCampus => campus.City)
+                }
+            </td>
+            <td>
+                @foreach (var availabilities in item.Availabilities)
+                {
+                    @Html.DisplayFor(modelAv => availabilities.Day)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
