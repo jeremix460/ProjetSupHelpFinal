@@ -10,6 +10,7 @@ using System.Diagnostics;
 
 namespace ProjetSupHelp.Controllers
 {
+    [Authorize]
     public class DemandController : Controller
     {
         // List all Demands
@@ -23,7 +24,6 @@ namespace ProjetSupHelp.Controllers
         }
 
         //Make a Demand
-        [Authorize]
         [HttpGet]
         public ActionResult Demand()
         {
@@ -91,7 +91,7 @@ namespace ProjetSupHelp.Controllers
                 }
 
                 //Add predifined model attributes
-                newdemand.BoosterID = demand.BoosterID;
+                newdemand.BoosterID = Int32.Parse(User.Identity.Name.Split('@')[0]);
                 newdemand.CreationDate = DateTime.Now;
                 newdemand.Comments = demand.Comments;
                 

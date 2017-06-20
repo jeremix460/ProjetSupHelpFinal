@@ -10,6 +10,7 @@ using System.Collections.Specialized;
 
 namespace ProjetSupHelp.Controllers
 {
+    [Authorize]
     public class PropositionController : Controller
     {
 
@@ -24,7 +25,6 @@ namespace ProjetSupHelp.Controllers
         }
 
         //Make a proposition
-        [Authorize]
         [HttpGet]
         public ActionResult Offer()
         {
@@ -92,7 +92,7 @@ namespace ProjetSupHelp.Controllers
                 }
               
                 //Add predifined model attributes
-                newProposition.BoosterID = proposition.BoosterID;
+                newProposition.BoosterID = Int32.Parse(User.Identity.Name.Split('@')[0]);
                 newProposition.CreationDate = DateTime.Now;
                 newProposition.Comments = proposition.Comments;
                 newProposition.ExtraCourses = proposition.ExtraCourses;
