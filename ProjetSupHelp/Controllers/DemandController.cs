@@ -33,7 +33,7 @@ namespace ProjetSupHelp.Controllers
 
         //Supply the demand
         [HttpPost]
-        public ActionResult Offer(SupportDemand demand)
+        public ActionResult Demand(SupportDemand demand)
         {
             //instance a new support demands
             SupportDemand newdemand = new SupportDemand()
