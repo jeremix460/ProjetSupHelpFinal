@@ -1,0 +1,306 @@
+﻿
+@{
+    ViewBag.Title = "Demander";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p></p>
+<link rel="stylesheet" href="~/Content/font-awesome.css">
+<link rel="stylesheet" href="~/Content/font-awesome.min.css">
+<link rel="stylesheet" href="~/Content/bootstrap-select.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src ="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="~/Scripts/bootstrap-select.js"></script>
+
+
+
+
+<!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+<form method="post" class ="form-horizontal">
+    <br />
+    <fieldset>
+        <!-- Form Name -->
+        <legend>Demadner du soutien</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="idsupinfo">ID<span class="asteriskField" style="color:red">
+    *
+</span></label>
+            <div class="col-md-5">
+                <input id="idsupinfo" name="idsupinfo" type="text" placeholder="Campus ID" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Multiple Checkboxes (inline) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="helpmatiere">Matière(s) où tu souhaites de l'aide </label>
+          
+            <div class="col-md-4">
+                <select id="done" class="selectpicker" multiple data-done-button="true" data-actions-box="true" >
+                    <option data-content="<span class='label label-success'>1ADS</span>">1ADS</option>       
+                    <option data-content="<span class='label label-success'>1ARI</span>">1ARI</option>
+                    <option data-content="<span class='label label-success'>1CNA</span>">1CNA</option>
+                    <option data-content="<span class='label label-success'>1CPA</span>">1CPA</option>
+                    <option data-content="<span class='label label-success'>1ENG</span>">1ENG</option>
+                    <option data-content="<span class='label label-success'>1GCC</span>">1GCC</option>
+                    <option data-content="<span class='label label-success'>1JWB</span>">1JWB</option>
+                    <option data-content="<span class='label label-success'>1LAL</span>">1LAL</option>
+                    <option data-content="<span class='label label-success'>1LAW</span>">1LAW</option>
+                    <option data-content="<span class='label label-success'>1LIN</span>">1LIN</option>
+                    <option data-content="<span class='label label-success'>1MER</span>">1MER</option>
+                    <option data-content="<span class='label label-success'>1MGT</span>">1MGT</option>
+                    <option data-content="<span class='label label-success'>1MSA</span>">1MSA</option>
+                    <option data-content="<span class='label label-success'>1ORC</span>">1ORC</option>
+                    <option data-content="<span class='label label-success'>1OSS</span>">1OSS</option>
+                    <option data-content="<span class='label label-success'>1SEC</span>">1SEC</option>
+                    <option data-content="<span class='label label-success'>1SET</span>">1SET</option>
+                    <option data-content="<span class='label label-success'>1WEB</span>">1WEB</option>
+                   
+                    <option data-content="<span class='label label-primary'>2ADS</span>">2ADS</option>
+                    <option data-content="<span class='label label-primary'>2CMP</span>">2CMP</option>
+                    <option data-content="<span class='label label-primary'>2CNB</span>">2CNB</option>
+                    <option data-content="<span class='label label-primary'>2CPP</span>">2CPP</option>
+                    <option data-content="<span class='label label-primary'>2ENG</span>">2ENG</option>
+                    <option data-content="<span class='label label-primary'>2GRA</span>">2GRA</option>
+                    <option data-content="<span class='label label-primary'>2JVA</span>">2JVA</option>
+                    <option data-content="<span class='label label-primary'>2JWB</span>">2JWB</option>
+                    <option data-content="<span class='label label-primary'>2LAW</span>">2LAW</option>
+                    <option data-content="<span class='label label-primary'>2LIN</span>">2LIN</option>
+                    <option data-content="<span class='label label-primary'>2MGT</span>">2MGT</option>
+                    <option data-content="<span class='label label-primary'>2MSA</span>">2MSA</option>
+                    <option data-content="<span class='label label-primary'>2NET</span>">2NET</option>
+                    <option data-content="<span class='label label-primary'>2OOP</span>">2OOP</option>
+                    <option data-content="<span class='label label-primary'>2ORC</span>">2ORC</option>
+                    <option data-content="<span class='label label-primary'>2PBS</span>">2PBS</option>
+                    <option data-content="<span class='label label-primary'>2UML</span>">2UML</option>
+                    <option data-content="<span class='label label-primary'>2WEB</span>">2WEB</option>
+
+                    <option data-content="<span class='label label-warning'>3AIT</span>">3AIT</option>
+                    <option data-content="<span class='label label-warning'>3AND</span>">3AND</option>
+                    <option data-content="<span class='label label-warning'>3APL</span>">3APL</option>
+                    <option data-content="<span class='label label-warning'>3ASP</span>">3ASP</option>
+                    <option data-content="<span class='label label-warning'>3CNS</span>">3CNS</option>
+                    <option data-content="<span class='label label-warning'>3ENG</span>">3ENG</option>
+                    <option data-content="<span class='label label-warning'>3JVA</span>">3JVA</option>
+                    <option data-content="<span class='label label-warning'>3LAW</span>">3LAW</option>
+                    <option data-content="<span class='label label-warning'>3LIN</span>">3LIN</option>
+                    <option data-content="<span class='label label-warning'>3MET</span>">3MET</option>
+                    <option data-content="<span class='label label-warning'>3MGT</span>">3MGT</option>
+                    <option data-content="<span class='label label-warning'>3MSA</span>">3MSA</option>
+                    <option data-content="<span class='label label-warning'>3ORC</span>">3ORC</option>
+                    <option data-content="<span class='label label-warning'>3WEB</span>">3WEB</option>
+                    <option data-content="<span class='label label-warning'>3WIN</span>">3WIN</option>
+                  
+                    <option data-content="<span class='label label-info'>4AIT</span>">4AIT</option>
+                    <option data-content="<span class='label label-info'>4BIS</span>">4BIS</option>
+                    <option data-content="<span class='label label-info'>4CLD</span>">4CLD</option>
+                    <option data-content="<span class='label label-info'>4ENG</span>">4ENG</option>
+                    <option data-content="<span class='label label-info'>4EPS</span>">4EPS</option>
+                    <option data-content="<span class='label label-info'>4ERP</span>">4ERP</option>
+                    <option data-content="<span class='label label-info'>4JVA</span>">4JVA</option>
+                    <option data-content="<span class='label label-info'>4LAW</span>">4LAW</option>
+                    <option data-content="<span class='label label-info'>4MET</span>">4MET</option>
+                    <option data-content="<span class='label label-info'>4MGT</span>">4MGT</option>
+                    <option data-content="<span class='label label-info'>4MOS</span>">4MOS</option>
+                    <option data-content="<span class='label label-info'>4MSE</span>">4MSE</option>
+                    <option data-content="<span class='label label-info'>4NET</span>">4NET</option>
+                    <option data-content="<span class='label label-info'>4VIP</span>">4VIP</option>
+                    <option data-content="<span class='label label-info'>4VTZ</span>">4VTZ</option>
+
+                    <option data-content="<span class='label label-danger'>5BCP</span>">5BCP</option>
+                    <option data-content="<span class='label label-danger'>5BIS</span>">5BIS</option>
+                    <option data-content="<span class='label label-danger'>5CLD</span>">5CLD</option>
+                    <option data-content="<span class='label label-danger'>5DAT</span>">5DAT</option>
+                    <option data-content="<span class='label label-danger'>5EBP</span>">5EBP</option>
+                    <option data-content="<span class='label label-danger'>5EMI</span>">5EMI</option>
+                    <option data-content="<span class='label label-danger'>5ENG</span>">5ENG</option>
+                    <option data-content="<span class='label label-danger'>5LAW</span>">5LAW</option>
+                    <option data-content="<span class='label label-danger'>5MET</span>">5MET</option>
+                    <option data-content="<span class='label label-danger'>5MGT</span>">5MGT</option>
+                    <option data-content="<span class='label label-danger'>5ORC</span>">5ORC</option>
+                    <option data-content="<span class='label label-danger'>5TGF</span>">5TGF</option>
+                    <option data-content="<span class='label label-danger'>5VTZ</span>">5VTZ</option>
+
+                </select>
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="comment">Autre(s) domaine(s) </label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="comment" name="comment"></textarea>
+                <span class="help-block">(Exemple: Wordpress, Unity, Prestashop ...)</span>
+            </div>
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="campus">Campus<span class="asteriskField" style="color:red">
+    *
+</span></label>
+            <div class="col-md-4">
+                <select id="done" class="selectpicker" multiple data-done-button="true" data-actions-box="true">
+                 
+                    <optgroup label="France et Outre-Mer">
+                        <option data-content="<span class='styled'>Bordeaux</span>">Bordeaux</option>
+                        <option data-content="<span class='styled'>Caen</span>">Caen</option>
+                        <option data-content="<span class='styled'>Clermont-Ferrand</span>">Clermont-Ferrand</option>
+                        <option data-content="<span class='styled'>Grenoble</span>">Grenoble</option>
+                        <option data-content="<span class='styled'>Lille</span>">Lille</option>
+                        <option data-content="<span class='styled'>Lyon</span>">Lyon</option>
+                        <option data-content="<span class='styled'>Marseille</span>">Marseille</option>
+                        <option data-content="<span class='styled'>Metz</span>">Metz</option>
+                        <option data-content="<span class='styled'>Montpellier</span>">Montpellier</option>
+                        <option data-content="<span class='styled'>Nantes</span>">Nantes</option>
+                        <option data-content="<span class='styled'>Nice</span>">Nice</option>
+                        <option data-content="<span class='styled'>Orléans</span>">Orléans</option>
+                        <option data-content="<span class='styled'>Paris</span>">Paris</option>
+                        <option data-content="<span class='styled'>Reims</span>">Reims</option>
+                        <option data-content="<span class='styled'>Rennes</span>">Rennes</option>
+                        <option data-content="<span class='styled'>Strasbourg</span>">Strasbourg</option>
+                        <option data-content="<span class='styled'>Toulouse</span>">Toulouse</option>
+                        <option data-content="<span class='styled'>Tours</span>">Tours</option>
+                        <option data-content="<span class='styled'>Troyes</span>">Troyes</option>
+                        <option data-content="<span class='styled'>Valenciennes</span>">Valenciennes</option>
+                        <option data-content="<span class='styled'>Martinique</span>">Martinique</option>
+                        <option data-content="<span class='styled'>Guadeloupe</span>">Guadeloupe</option>
+                        <option data-content="<span class='styled'>Réunion</span>">Réunion</option>
+                    </optgroup>
+
+                    <optgroup label="Europe">
+                        <option data-content="<span class='styled'>Bruxelles</span>">Bruxelles</option>
+                        <option data-content="<span class='styled'>Londres</span>">Londres</option>
+                        <option data-content="<span class='styled'>Luxembourg</span>">Luxembourg</option>
+                        <option data-content="<span class='styled'>Rome</span>">Rome</option>
+                        <option data-content="<span class='styled'>Suisse</span>">Suisse</option>
+                        <option data-content="<span class='styled'>Trapani</span>">Trapani</option>
+                    </optgroup>
+
+                    <optgroup label="Amérique">
+                        <option data-content="<span class='styled'>Montréal</span>">Montréal</option>
+                        <option data-content="<span class='styled'>San Francisco</span>">San Francisco</option>
+                        <option data-content="<span class='styled'>Rio de Janeiro</span>">Rio de Janeiro</option>
+                    </optgroup>
+
+                    <optgroup label="Afrique">
+                        <option data-content="<span class='styled'>Casablanca</span>">Casablanca</option>
+                        <option data-content="<span class='styled'>Île-Maurice</span>">Île-Maurice</option>
+                        <option data-content="<span class='styled'>Sénégal</span>">Sénégal</option>
+                        <option data-content="<span class='styled'>Rabat</span>">Rabat</option>
+                    </optgroup>
+
+                    <optgroup label="Asie">
+                        <option data-content="<span class='styled'>Hong Kong</span>">Hong Kong</option>
+                        <option data-content="<span class='styled'>Beijing</span>">Beijing</option>
+                        <option data-content="<span class='styled'>Tianjin</span>">Tianjin</option>
+                        <option data-content="<span class='styled'>Zhenjiang</span>">Zhenjiang</option>
+                    </optgroup>
+
+                </select>
+             </div>
+          </div>
+       
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="disponibilty">Disponibilité(s)<span class="asteriskField" style="color:red">
+    *
+</span></label>
+            <div class="col-md-4">
+                <div class="checkbox">
+                    <input id="checkbox_lundi" class="styled" type="checkbox" >
+                    <label for="checkbox_lundi">
+                        Lundi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_mardi" class="styled" type="checkbox" >
+                    <label for="checkbox_mardi">
+                        Mardi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_mercredi" class="styled" type="checkbox">
+                    <label for="checkbox_mercredi">
+                        Mercredi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_jeudi" class="styled" type="checkbox">
+                    <label for="checkbox_jeudi">
+                        Jeudi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_vendredi" class="styled" type="checkbox">
+                    <label for="checkbox_vendredi">
+                        Vendredi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_samedi" class="styled" type="checkbox">
+                    <label for="checkbox_samedi">
+                        Samedi
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <input id="checkbox_dimanche" class="styled" type="checkbox">
+                    <label for="checkbox_dimanche">
+                        Dimanche
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="commentary">Commentaire(s)</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="commentary" name="commentary"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!-- Submit button -->
+            <button class="submit btn btn-block btn-lg btn-success " name="submit" type="submit">Demander</button>
+        </div>
+
+    </fieldset>
+</form>
+
+
+<style>
+    body, select {
+        font-size: 12px;
+    }
+
+    form {
+        margin: 5px;
+    }
+
+    p {
+        color: red;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    b {
+        color: blue;
+    }
+</style>

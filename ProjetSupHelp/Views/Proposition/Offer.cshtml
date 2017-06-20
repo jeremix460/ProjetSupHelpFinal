@@ -1,0 +1,311 @@
+﻿@model ProjetSupHelp.Models.SupportProposition
+
+@{
+    ViewBag.Title = "Offer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    
+}
+
+@*Import javascript/jquery libs*@
+@Html.Partial("_PartialComponents")
+
+
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-horizontal">
+        <fieldset>
+            <h4>Proposer du soutien</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            
+            <!-- Temporary field for ID Booster -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.BoosterID, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.BoosterID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.BoosterID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <!-- Courses list -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >Matière(s) poposée(s) </label>
+
+                <div class="col-md-4">
+                    <select id="courses_list" name="courses_list"  class="selectpicker" multiple data-done-button="true" data-actions-box="true">
+                        <option data-content="<span class='label label-success'>1ADS</span>">1</option>
+                        <option data-content="<span class='label label-success'>1ARI</span>">2</option>
+                        <option data-content="<span class='label label-success'>1CNA</span>">3</option>
+                        <option data-content="<span class='label label-success'>1CPA</span>">4</option>
+                        <option data-content="<span class='label label-success'>1ENG</span>">5</option>
+                        <option data-content="<span class='label label-success'>1GCC</span>">6</option>
+                        <option data-content="<span class='label label-success'>1JWB</span>">7</option>
+                        <option data-content="<span class='label label-success'>1LAL</span>">8</option>
+                        <option data-content="<span class='label label-success'>1LAW</span>">9</option>
+                        <option data-content="<span class='label label-success'>1LIN</span>">10</option>
+                        <option data-content="<span class='label label-success'>1MER</span>">11</option>
+                        <option data-content="<span class='label label-success'>1MGT</span>">12</option>
+                        <option data-content="<span class='label label-success'>1MSA</span>">13</option>
+                        <option data-content="<span class='label label-success'>1ORC</span>">14</option>
+                        <option data-content="<span class='label label-success'>1OSS</span>">15</option>
+                        <option data-content="<span class='label label-success'>1SEC</span>">16</option>
+                        <option data-content="<span class='label label-success'>1SET</span>">17</option>
+                        <option data-content="<span class='label label-success'>1WEB</span>">18</option>
+
+                        <option data-content="<span class='label label-primary'>2ADS</span>">19</option>
+                        <option data-content="<span class='label label-primary'>2CMP</span>">20</option>
+                        <option data-content="<span class='label label-primary'>2CNB</span>">21</option>
+                        <option data-content="<span class='label label-primary'>2CPP</span>">22</option>
+                        <option data-content="<span class='label label-primary'>2ENG</span>">23</option>
+                        <option data-content="<span class='label label-primary'>2GRA</span>">24</option>
+                        <option data-content="<span class='label label-primary'>2JVA</span>">25</option>
+                        <option data-content="<span class='label label-primary'>2JWB</span>">26</option>
+                        <option data-content="<span class='label label-primary'>2LAW</span>">27</option>
+                        <option data-content="<span class='label label-primary'>2LIN</span>">28</option>
+                        <option data-content="<span class='label label-primary'>2MGT</span>">29</option>
+                        <option data-content="<span class='label label-primary'>2MSA</span>">30</option>
+                        <option data-content="<span class='label label-primary'>2NET</span>">31</option>
+                        <option data-content="<span class='label label-primary'>2OOP</span>">32</option>
+                        <option data-content="<span class='label label-primary'>2ORC</span>">33</option>
+                        <option data-content="<span class='label label-primary'>2PBS</span>">34</option>
+                        <option data-content="<span class='label label-primary'>2UML</span>">35</option>
+                        <option data-content="<span class='label label-primary'>2WEB</span>">36</option>
+
+                        <option data-content="<span class='label label-warning'>3AIT</span>">37</option>
+                        <option data-content="<span class='label label-warning'>3AND</span>">38</option>
+                        <option data-content="<span class='label label-warning'>3APL</span>">39</option>
+                        <option data-content="<span class='label label-warning'>3ASP</span>">40</option>
+                        <option data-content="<span class='label label-warning'>3CNS</span>">41</option>
+                        <option data-content="<span class='label label-warning'>3ENG</span>">42</option>
+                        <option data-content="<span class='label label-warning'>3JVA</span>">43</option>
+                        <option data-content="<span class='label label-warning'>3LAW</span>">44</option>
+                        <option data-content="<span class='label label-warning'>3LIN</span>">45</option>
+                        <option data-content="<span class='label label-warning'>3MET</span>">46</option>
+                        <option data-content="<span class='label label-warning'>3MGT</span>">47</option>
+                        <option data-content="<span class='label label-warning'>3MSA</span>">48</option>
+                        <option data-content="<span class='label label-warning'>3ORC</span>">49</option>
+                        <option data-content="<span class='label label-warning'>3WEB</span>">50</option>
+                        <option data-content="<span class='label label-warning'>3WIN</span>">51</option>
+
+                        <option data-content="<span class='label label-info'>4AIT</span>">52</option>
+                        <option data-content="<span class='label label-info'>4BIS</span>">53</option>
+                        <option data-content="<span class='label label-info'>4CLD</span>">54</option>
+                        <option data-content="<span class='label label-info'>4ENG</span>">55</option>
+                        <option data-content="<span class='label label-info'>4EPS</span>">56</option>
+                        <option data-content="<span class='label label-info'>4ERP</span>">57</option>
+                        <option data-content="<span class='label label-info'>4JVA</span>">58</option>
+                        <option data-content="<span class='label label-info'>4LAW</span>">59</option>
+                        <option data-content="<span class='label label-info'>4MET</span>">60</option>
+                        <option data-content="<span class='label label-info'>4MGT</span>">61</option>
+                        <option data-content="<span class='label label-info'>4MOS</span>">62</option>
+                        <option data-content="<span class='label label-info'>4MSE</span>">63</option>
+                        <option data-content="<span class='label label-info'>4NET</span>">64</option>
+                        <option data-content="<span class='label label-info'>4VIP</span>">65</option>
+                        <option data-content="<span class='label label-info'>4VTZ</span>">66</option>
+
+                        <option data-content="<span class='label label-danger'>5BCP</span>">67</option>
+                        <option data-content="<span class='label label-danger'>5BIS</span>">68</option>
+                        <option data-content="<span class='label label-danger'>5CLD</span>">69</option>
+                        <option data-content="<span class='label label-danger'>5DAT</span>">70</option>
+                        <option data-content="<span class='label label-danger'>5EBP</span>">71</option>
+                        <option data-content="<span class='label label-danger'>5EMI</span>">72</option>
+                        <option data-content="<span class='label label-danger'>5ENG</span>">73</option>
+                        <option data-content="<span class='label label-danger'>5LAW</span>">74</option>
+                        <option data-content="<span class='label label-danger'>5MET</span>">75</option>
+                        <option data-content="<span class='label label-danger'>5MGT</span>">76</option>
+                        <option data-content="<span class='label label-danger'>5ORC</span>">77</option>
+                        <option data-content="<span class='label label-danger'>5TGF</span>">78</option>
+                        <option data-content="<span class='label label-danger'>5VTZ</span>">79</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <!-- Extra courses test Area -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.ExtraCourses, htmlAttributes: new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ExtraCourses, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ExtraCourses, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <!-- Campus list -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="campus">
+                    Campus<span class="asteriskField" style="color:red">
+                        *
+                    </span>
+                </label>
+                <div class="col-md-4">
+                    <select id="campus_list" name="campus_list" class="selectpicker" multiple data-done-button="true" data-actions-box="true">
+
+                        <optgroup label="France et Outre-Mer">
+                            <option data-content="<span class='styled'>Bordeaux</span>">1</option>
+                            <option data-content="<span class='styled'>Caen</span>">2</option>
+                            <option data-content="<span class='styled'>Clermont-Ferrand</span>">3</option>
+                            <option data-content="<span class='styled'>Grenoble</span>">4</option>
+                            <option data-content="<span class='styled'>Lille</span>">5</option>
+                            <option data-content="<span class='styled'>Lyon</span>">6</option>
+                            <option data-content="<span class='styled'>Marseille</span>">7</option>
+                            <option data-content="<span class='styled'>Metz</span>">8</option>
+                            <option data-content="<span class='styled'>Montpellier</span>">9</option>
+                            <option data-content="<span class='styled'>Nantes</span>">10</option>
+                            <option data-content="<span class='styled'>Nice</span>">11</option>
+                            <option data-content="<span class='styled'>Orléans</span>">12</option>
+                            <option data-content="<span class='styled'>Paris</span>">13</option>
+                            <option data-content="<span class='styled'>Reims</span>">14</option>
+                            <option data-content="<span class='styled'>Rennes</span>">15</option>
+                            <option data-content="<span class='styled'>Strasbourg</span>">16</option>
+                            <option data-content="<span class='styled'>Toulouse</span>">17</option>
+                            <option data-content="<span class='styled'>Tours</span>">18</option>
+                            <option data-content="<span class='styled'>Troyes</span>">19</option>
+                            <option data-content="<span class='styled'>Valenciennes</span>">20</option>
+                            <option data-content="<span class='styled'>Martinique</span>">21</option>
+                            <option data-content="<span class='styled'>Guadeloupe</span>">22</option>
+                            <option data-content="<span class='styled'>Réunion</span>">23</option>
+                        </optgroup>
+
+                        <optgroup label="Europe">
+                            <option data-content="<span class='styled'>Bruxelles</span>">24</option>
+                            <option data-content="<span class='styled'>Londres</span>">25</option>
+                            <option data-content="<span class='styled'>Luxembourg</span>">26</option>
+                            <option data-content="<span class='styled'>Rome</span>">27</option>
+                            <option data-content="<span class='styled'>Suisse</span>">28</option>
+                            <option data-content="<span class='styled'>Trapani</span>">29</option>
+                        </optgroup>
+
+                        <optgroup label="Amérique">
+                            <option data-content="<span class='styled'>Montréal</span>">30</option>
+                            <option data-content="<span class='styled'>San Francisco</span>">31</option>
+                            <option data-content="<span class='styled'>Rio de Janeiro</span>">32</option>
+                        </optgroup>
+
+                        <optgroup label="Afrique">
+                            <option data-content="<span class='styled'>Casablanca</span>">33</option>
+                            <option data-content="<span class='styled'>Île-Maurice</span>">34</option>
+                            <option data-content="<span class='styled'>Sénégal</span>">35</option>
+                            <option data-content="<span class='styled'>Rabat</span>">36</option>
+                        </optgroup>
+
+                        <optgroup label="Asie">
+                            <option data-content="<span class='styled'>Hong Kong</span>">37</option>
+                            <option data-content="<span class='styled'>Beijing</span>">38</option>
+                            <option data-content="<span class='styled'>Tianjin</span>">39</option>
+                            <option data-content="<span class='styled'>Zhenjiang</span>">40</option>
+                        </optgroup>
+
+                    </select>
+                </div>
+            </div>
+
+            <!-- Multiple Checkboxes For Disponibilities -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">
+                    Disponibilité(s)<span class="asteriskField" style="color:red">
+                        *
+                    </span>
+                </label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <input id="checkbox_lundi" name="availibities" class="styled" type="checkbox" value="1" >
+                        <label for="checkbox_lundi">
+                            Lundi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_mardi" class="styled" name="availibities" type="checkbox" value="2">
+                        <label for="checkbox_mardi">
+                            Mardi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_mercredi" class="styled"  name="availibities" type="checkbox" value="3">
+                        <label for="checkbox_mercredi">
+                            Mercredi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_jeudi" class="styled" name="availibities" type="checkbox" value="4">
+                        <label for="checkbox_jeudi">
+                            Jeudi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_vendredi" class="styled" name="availibities" type="checkbox" value="5">
+                        <label for="checkbox_vendredi">
+                            Vendredi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_samedi" class="styled" name="availibities" type="checkbox" value="6">
+                        <label for="checkbox_samedi">
+                            Samedi
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <input id="checkbox_dimanche" class="styled" name="availibities" type="checkbox" value="0">
+                        <label for="checkbox_dimanche">
+                            Dimanche
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Comment text Area -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "col-md-4 control-label" })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <!-- Submit  -->
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+                    <button class="submit btn btn-block btn-lg btn-info " type="submit">Soumettre la proposition</button>
+                </div>
+
+            </div>
+        </fieldset>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+ <!-- Extra Martian Style  -->
+<style>
+    body, select {
+        font-size: 12px;
+    }
+
+    form {
+        margin: 5px;
+    }
+
+    p {
+        color: red;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    b {
+        color: blue;
+    }
+</style>
+
