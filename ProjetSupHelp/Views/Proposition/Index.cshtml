@@ -81,7 +81,30 @@
         <td>
             @foreach (var availabilities in item.Availabilities)
             {
-                            @Html.DisplayFor(modelAv => availabilities.Day)
+                switch (availabilities.Day)
+                {
+                    case DayOfWeek.Monday:
+                        <span class='label label-default'>Lundi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Tuesday:
+                        <span class='label label-default'>Mardi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Wednesday:
+                        <span class='label label-default'>Mercredi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Thursday:
+                        <span class='label label-default'>Jeudi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Friday:
+                        <span class='label label-default'>Vendredi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Saturday:
+                        <span class='label label-default'>Samedi &nbsp;</span>
+                        break;
+                    case DayOfWeek.Sunday:
+                        <span class='label label-default'>Dimanche &nbsp;</span>
+                        break;
+                }
             }
         </td>
         <td>
