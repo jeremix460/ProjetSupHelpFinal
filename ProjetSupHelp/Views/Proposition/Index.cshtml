@@ -6,6 +6,18 @@
 }
 
 <h2>Propositions de soutiens</h2>
+<br />
+
+@using (Html.BeginForm("Index", "Proposition", FormMethod.Get))
+{
+    <p>
+        Find by Booster: @Html.TextBox("searchString")
+        <input class="btn-success" type="submit" value="Search" />
+    </p>
+}
+
+
+
 
 <table class="table">
     <tr>
@@ -23,7 +35,8 @@
             @Html.DisplayNameFor(model => model.Availabilities)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
+            @*@Html.DisplayNameFor(model => model.CreationDate)*@
+            @Html.ActionLink("CreationDate", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
     </tr>
 

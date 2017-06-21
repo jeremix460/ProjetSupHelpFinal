@@ -16,11 +16,33 @@ namespace ProjetSupHelp.Controllers
 
         // List all propositions
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
             using (SupHelpDbContext db = new SupHelpDbContext())
             {
-                return View(db.Propositions.Include(sp => sp.SupportedCourses).Include(c => c.Campus).Include(av => av.Availabilities).ToList());
+                ViewBag.DateSortParm = sortOrder == "Date_asc" ? "Date_desc" : "Date_asc";
+
+
+                var propositions = from s in db.Propositions
+                               select s;
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    propositions = propositions.Where(s => s.BoosterID.ToString().Contains(searchString));
+
+                }
+                switch (sortOrder)
+                {
+                    case "Date_asc":
+                        propositions = propositions.OrderBy(s => s.CreationDate);
+                        break;
+                    case "Date_desc":
+                        propositions = propositions.OrderByDescending(s => s.CreationDate);
+                        break;
+                    default:
+                        propositions = propositions.OrderBy(s => s.CreationDate);
+                        break;
+                }
+                return View(propositions.Include(sp => sp.SupportedCourses).Include(c => c.Campus).Include(av => av.Availabilities).ToList());
             }
         }
 
