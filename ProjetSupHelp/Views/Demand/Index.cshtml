@@ -7,6 +7,14 @@
 <h2>Demandes en cours</h2>
 
 
+@using (Html.BeginForm("Index", "Proposition", FormMethod.Get))
+{
+    <p>
+        Rechercher: @Html.TextBox("searchString")
+        <input class="btn btn-default" type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -37,7 +45,24 @@
             <td>
                 @foreach (var course in item.DemandedCourses)
                 {
-                    @Html.DisplayFor(modelCourse => course.Label)
+                    switch (course.Year)
+                    {
+                        case ProjetSupHelp.Models.Course.SupinfoYear.ASc1:
+                            <span class='label label-success'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                            break;
+                        case ProjetSupHelp.Models.Course.SupinfoYear.ASc2:
+                            <span class='label label-primary'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                            break;
+                        case ProjetSupHelp.Models.Course.SupinfoYear.BSc3:
+                            <span class='label label-warning'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                            break;
+                        case ProjetSupHelp.Models.Course.SupinfoYear.MSc1:
+                            <span class='label label-info'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                            break;
+                        case ProjetSupHelp.Models.Course.SupinfoYear.MSc2:
+                            <span class='label label-danger'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                            break;
+                    }
                 }
             </td>
             <td>

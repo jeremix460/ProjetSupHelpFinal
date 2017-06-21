@@ -25,6 +25,7 @@ namespace ProjetSupHelp.Models
         public string Comments { get; set; }
 
         [DisplayName("Publication")]
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime CreationDate { get; set; }
 
         [Required]

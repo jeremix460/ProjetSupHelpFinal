@@ -33,7 +33,24 @@
         <dd>
             @foreach (var course in Model.SupportedCourses)
             {
-                @Html.DisplayFor(modelCourse => course.Label)
+                switch (course.Year)
+                {
+                    case ProjetSupHelp.Models.Course.SupinfoYear.ASc1:
+                        <span class='label label-success'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.ASc2:
+                        <span class='label label-primary'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.BSc3:
+                        <span class='label label-warning'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.MSc1:
+                        <span class='label label-info'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.MSc2:
+                        <span class='label label-danger'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                }
             }
         </dd>
 
@@ -78,9 +95,6 @@
     </dl>
 </div>
 
-<a class="btn" href="https://outlook.office.com/owa/?path=/mail/action/compose&to=@User.Identity.Name&subject=Reply+:+Proposition+de+soutien&body=Je+suis+intéressé+par+ta+proposition+de+soutien+:)" target="_blank">Répondre à la proposition</a>
+<a class="btn btn-group-lg btn-block btn-default" href="https://outlook.office.com/owa/?path=/mail/action/compose&to=@User.Identity.Name&subject=Reply+:+Proposition+de+soutien&body=Je+suis+intéressé+par+ta+proposition+de+soutien+:)" target="_blank">Répondre à la proposition</a>
 
 
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
