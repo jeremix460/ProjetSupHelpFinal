@@ -49,19 +49,39 @@
         <td>
             @foreach (var course in item.SupportedCourses)
             {
-                @Html.DisplayFor(modelCourse => course.Label)
+                
+
+                switch (course.Year)
+                {
+                    case ProjetSupHelp.Models.Course.SupinfoYear.ASc1:
+                        <span class='label label-success'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.ASc2:
+                        <span class='label label-primary'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.BSc3:
+                        <span class='label label-warning'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.MSc1:
+                        <span class='label label-info'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                    case ProjetSupHelp.Models.Course.SupinfoYear.MSc2:
+                        <span class='label label-danger'>@Html.DisplayFor(modelCourse => course.Label)</span>
+                        break;
+                }
+
             }
         </td>
         <td>
             @foreach (var campus in item.Campus)
             {
-                @Html.DisplayFor(modelCampus => campus.City)
-            }        
+                            @Html.DisplayFor(modelCampus => campus.City)
+            }
         </td>
         <td>
             @foreach (var availabilities in item.Availabilities)
             {
-                @Html.DisplayFor(modelAv => availabilities.Day)
+                            @Html.DisplayFor(modelAv => availabilities.Day)
             }
         </td>
         <td>

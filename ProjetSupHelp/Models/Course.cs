@@ -8,7 +8,7 @@ namespace ProjetSupHelp.Models
 {
     public class Course
     {
-        public enum SupinfoYear { ASc1, ASc2, BSc3, MSc1, MSc2 };
+        public enum SupinfoYear { ASc1 = 0 , ASc2 = 1, BSc3 = 2, MSc1 =3, MSc2 = 4 };
 
         [Key]
         public int Id { get; set; }
